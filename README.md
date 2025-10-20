@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Dev Tamakuwala — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a personal portfolio website built with React and Tailwind CSS. It showcases projects, skills, journey (education/work), and contact information. The site is designed to be responsive and easy to update.
 
-## Available Scripts
+## What this project contains
 
-In the project directory, you can run:
+- `public/` — static files, icons, and the app HTML. Put assets like `avatar.png` or `Dev_Tamakuwala.pdf` here.
+- `src/` — the React application source
+	- `components/` — reusable UI components (About, Projects, Skills, Sidebar, Section, etc.)
+	- `data/portfolioData.js` — the main content file: edit your name, bio, projects, skills, links, etc.
+	- `config/` — particle/background configs and other environment configs
+	- `hooks/` — small custom hooks used by components
+	- `App.jsx` — main application layout
+	- `index.js` — app entry
 
-### `npm start`
+## Quick start (development)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Install dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```powershell
+npm install
+```
 
-### `npm test`
+2. Start the dev server
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```powershell
+npm start
+```
 
-### `npm run build`
+Open http://localhost:3000 in your browser. The dev server supports hot reloading.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Editing content
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Most site content is driven by `src/data/portfolioData.js`:
+- Update `user` for name, titles, bio, social links and `avatar` path.
+- Update `projectsData` for project list, tags, links, and flags (demo/playstore).
+- Update `skillsData` and `journeyData` for skills and education/work entries.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+UI layout and styles are in `src/components/`. Use Tailwind classes to tweak spacing and colors.
 
-### `npm run eject`
+## Responsive behavior
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The site is responsive using Tailwind breakpoints. The `Sidebar` is hidden on small screens; main content becomes full-width and sections collapse into a single column on mobile.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you want a mobile navigation (hamburger) instead of the hidden sidebar, I can add it.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Building for production
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```powershell
+npm run build
+```
 
-## Learn More
+The production build will be output to the `build/` folder.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can deploy the `build/` folder to any static hosting provider (GitHub Pages, Netlify, Vercel, Azure Static Web Apps, etc.). If you'd like, I can prepare a deployment guide for your preferred host.
 
-### Code Splitting
+## Contributing / Tips
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Keep personal data in `src/data/portfolioData.js`. Avoid committing secrets.
+- Use `public/` for images and binary assets (PDFs, favicons).
+- If you change Tailwind config, re-run the dev server.
 
-### Analyzing the Bundle Size
+## Need changes?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
+Tell me what text, image, or layout you'd like changed and I can apply it and preview it locally. If you'd like a polished README section for hosting or SEO metadata, I can add that too.
 ### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
