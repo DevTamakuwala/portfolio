@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
+/* General Body and Background Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #ccd6f6;
+  margin: 0;
+  line-height: 1.6;
+  background-color: #0a0a14; /* Fallback background color */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Make the canvas a fixed background */
+#mouse-tracker-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* This is the key change to place it behind everything */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main, aside {
+    position: relative;
+    z-index: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Enhanced Glass Effect */
+.glass-effect {
+    background: rgba(10, 25, 47, 0.5); /* A darker, moodier glass */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* For Safari */
+    border-radius: 16px;
+    border: 1px solid rgba(0, 255, 255, 0.2); /* Neon cyan border */
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.1), 0 0 50px rgba(255, 0, 255, 0.1); /* Cyan and Magenta glow */
+    transition: all 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.glass-effect:hover {
+    box-shadow: 0 0 35px rgba(0, 255, 255, 0.2), 0 0 60px rgba(255, 0, 255, 0.2);
+    border-color: rgba(0, 255, 255, 0.4);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
