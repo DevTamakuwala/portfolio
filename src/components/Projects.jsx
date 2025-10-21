@@ -6,13 +6,22 @@ import { LinkIcon } from './Icons';
 const Projects = () => {
     const [filter, setFilter] = useState('All');
     const categories = ['All', 'Mobile', 'Web'];
-    const filteredProjects = filter === 'All' ? projectsData : projectsData.filter(p => p.category.includes(filter));
+    const filteredProjects = filter === 'All' ? projectsData : projectsData.filter(p => Array.isArray(p.category) ? p.category.includes(filter) : p.category === filter);
+
+    // Helper to parse a fuzzy month-year string into a timestamp for sorting.
+    const parseDateToTime = (s) => {
+        if (!s) return 0;
+        const normal = String(s).trim();
+        if (/present/i.test(normal)) return Date.now();
+        const t = new Date(normal);
+        return isNaN(t.getTime()) ? 0 : t.getTime();
+    };
+
+    // Sort by startDate descending
+    const sortedProjects = [...filteredProjects].sort((a, b) => parseDateToTime(b.startDate) - parseDateToTime(a.startDate));
 
     const [expanded, setExpanded] = useState({});
-
-    const toggleExpanded = (name) => {
-        setExpanded(prev => ({ ...prev, [name]: !prev[name] }));
-    };
+    const toggleExpanded = (name) => setExpanded(prev => ({ ...prev, [name]: !prev[name] }));
 
     return (
         <Section id="projects" title="Projects">
@@ -25,14 +34,21 @@ const Projects = () => {
                         </button>
                     ))}
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {filteredProjects.map(project => (
-                        <div key={project.name} className="group block bg-gray-800/50 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2">
-                             <img src={`https://placehold.co/600x400/1F2937/14B8A6?text=${project.name.replace(/\s/g, '+')}`} alt={project.name} className="w-full h-32 sm:h-40 object-cover" />
-                             <div className="p-4 sm:p-6">
-                                <h3 className="text-lg font-bold text-gray-200 group-hover:text-cyan-400 transition-colors duration-300">{project.name}</h3>
-                                <p className="mt-2 text-gray-400 h-12">{project.description}</p>
-                                <div className="mt-12 sm:mt-13 flex flex-wrap gap-2 items-center">
+
+                <div className="relative border-l-2 border-gray-700">
+                    {sortedProjects.map((project, index) => (
+                        <div key={project.name} className="mb-6 pl-10 sm:pl-12 relative group">
+                            <div className="absolute -left-4 top-1 h-6 w-6 sm:h-7 sm:w-7 bg-gray-800 rounded-full border-4 border-cyan-400 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                                <LinkIcon />
+                            </div>
+
+                            <div className="transition-all duration-300 group-hover:bg-gray-800/50 p-3 rounded-lg group-hover:shadow-xl">
+                                <h3 className="text-lg font-bold text-gray-200 mt-1 group-hover:text-cyan-400 transition-colors">{project.name}</h3>
+                                <p className="text-sm text-gray-400 mt-1">{project.startDate} - {project.endDate}</p>
+                                <p className="text-sm text-gray-400 mt-1">{Array.isArray(project.category) ? project.category.join(' • ') : project.category}</p>
+                                <p className="text-md text-gray-300 mt-2">{project.description}</p>
+
+                                <ul className="mt-3 flex flex-wrap gap-2">
                                     {(() => {
                                         const maxVisible = 3;
                                         const tags = project.tags || [];
@@ -43,7 +59,7 @@ const Projects = () => {
                                         return (
                                             <>
                                                 {visibleTags.map((tag, i) => (
-                                                    <span key={`${project.name}-tag-${i}`} className="px-3 py-1 text-xs font-semibold bg-gray-700 text-cyan-400 rounded-full">{tag}</span>
+                                                    <li key={`${project.name}-tag-${i}`} className="px-3 py-1 text-xs font-semibold bg-gray-700 text-cyan-400 rounded-full">{tag}</li>
                                                 ))}
 
                                                 {remaining > 0 && !isExpanded && (
@@ -70,12 +86,14 @@ const Projects = () => {
                                             </>
                                         );
                                     })()}
+                                </ul>
+
+                                <div className="mt-4 flex flex-wrap gap-4">
+                                    {project.demo && <a href={project.link} target="_blank" rel="noreferrer" className="text-sm font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-2">Live Demo <LinkIcon/></a>}
+                                    {project.playstore && <a href={project.link} target="_blank" rel="noreferrer" className="text-sm font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-2">View on Play Store <LinkIcon/></a>}
+                                    {project.github && <a href={project.githubLink} target="_blank" rel="noreferrer" className="text-sm font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-2">View on GitHub <LinkIcon/></a>}
                                 </div>
-                                 <div className="mt-4">
-                                    {project.demo && <a href={project.link} target="_blank" rel="noreferrer" className="text-sm font-semibold text-cyan-400 hover:text-cyan-300">Live Demo <LinkIcon/></a>}
-                                    {project.playstore && <a href={project.link} target="_blank" rel="noreferrer" className="text-sm font-semibold text-cyan-400 hover:text-cyan-300">View on Play Store <LinkIcon/></a>}
-                                 </div>
-                             </div>
+                            </div>
                         </div>
                     ))}
                 </div>
