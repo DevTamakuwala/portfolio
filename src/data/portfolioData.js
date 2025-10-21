@@ -1,6 +1,7 @@
 export const user = {
     name: "Dev Tamakuwala",
-    avatar: "/MyPhoto.png",
+    // Use a filename relative to the public folder. We'll resolve it in components
+    avatar: "MyPhoto.png",
     titles: ["Flutter Developer", "Spring Boot Developer", "Backend Enthusiast", "Full Stack Enthusiast"],
     bio: "A passionate and results-driven Masters of Computer Application graduate with a knack for building scalable mobile and web applications. My journey is fueled by a constant curiosity and a desire to create meaningful, user-centric solutions. I thrive in collaborative environments, bringing strong skills in Flutter, Spring Boot, and modern front-end technologies to build innovative products.",
     social: {

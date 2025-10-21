@@ -11,7 +11,7 @@ const Sidebar = ({ activeSection }) => {
             <div>
                 <div className="flex items-center gap-4">
                     {user.avatar ? (
-                        <img src={user.avatar} alt={`${user.name} avatar`} className="h-20 w-20 rounded-full border-2 border-cyan-400 p-0 m-0" />
+                        <img src={process.env.PUBLIC_URL + '/' + user.avatar} alt={`${user.name} avatar`} className="h-20 w-20 rounded-full border-2 border-cyan-400 p-0 m-0 object-cover" />
                     ) : (
                         <div className="h-20 w-20 rounded-full bg-gray-700 flex items-center justify-center text-cyan-400 font-bold">{user.name.split(' ').map(n => n[0]).slice(0,2).join('')}</div>
                     )}

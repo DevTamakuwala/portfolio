@@ -14,7 +14,7 @@ const About = () => {
                     <span className="animate-ping">|</span>
                 </h2>
                 <p className="mt-4 sm:mt-8 max-w-xl text-gray-300 leading-relaxed">{user.bio}</p>
-                <a href={user.cv} download
+                <a href={process.env.PUBLIC_URL + '/' + user.cv} download
                    className="mt-6 sm:mt-12 inline-block bg-cyan-400 text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-cyan-300 transition-colors duration-300 shadow-lg shadow-cyan-500/20">
                    Download CV
                 </a>
