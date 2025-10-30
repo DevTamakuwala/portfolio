@@ -9,6 +9,7 @@ import { ArrowUpIcon } from './components/Icons';
 import Sidebar from './components/Sidebar';
 import MobileHeader from './components/MobileHeader';
 import Certificates from './components/Certificates';
+import WorkExperience from './components/WorkExperience';
 import './App.css';
 
 
@@ -18,7 +19,7 @@ export default function App() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['about', 'journey', 'skills', 'projects','certificates', 'contact'];
+            const sections = ['about', 'education', 'work-experience', 'projects', 'skills', 'certificates', 'contact'];
             const scrollPosition = window.scrollY + window.innerHeight / 2;
 
             for (const section of sections) {
@@ -47,6 +48,7 @@ export default function App() {
                     <div className="max-w-4xl mx-auto p-4">
                         <About />
                         <Journey />
+                        <WorkExperience />
                         <Projects />
                         <Skills />
                         <Certificates />

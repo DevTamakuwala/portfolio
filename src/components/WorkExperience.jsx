@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import Section from "./Section";
-import { projectsData } from "../data/portfolioData";
-import { LinkIcon, AcademicCapIcon } from "./Icons";
+import { Workexperience } from "../data/portfolioData";
+import { AcademicCapIcon, LinkIcon } from "./Icons";
 
-const Projects = () => {
+const WorkExperience = () => {
   const [filter, setFilter] = useState("All");
   const categories = ["All", "Mobile", "Web"];
   const filteredProjects =
     filter === "All"
-      ? projectsData
-      : projectsData.filter((p) =>
+      ? Workexperience
+      : Workexperience.filter((p) =>
           Array.isArray(p.category)
             ? p.category.includes(filter)
             : p.category === filter
@@ -34,10 +34,10 @@ const Projects = () => {
     setExpanded((prev) => ({ ...prev, [name]: !prev[name] }));
 
   return (
-    <Section id="projects" title="Projects">
+    <Section id="work-experience" title="Work Experience">
       <div className="glass-effect p-6 sm:p-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
-          Projects
+          Work Experience
         </h2>
         <div className="flex flex-wrap gap-2 mb-4">
           {categories.map((cat) => (
@@ -169,4 +169,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default WorkExperience;
