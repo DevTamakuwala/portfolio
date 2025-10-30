@@ -3,7 +3,7 @@ import { user } from '../data/portfolioData';
 import { GitHubIcon, LinkedInIcon, EmailIcon } from './Icons';
 
 const Sidebar = ({ activeSection }) => {
-    const navItems = ['about', 'journey', 'skills', 'projects', 'contact'];
+    const navItems = ['about', 'journey', 'skills', 'projects','certificates','contact'];
     const scrollToSection = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
     return (

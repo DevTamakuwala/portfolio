@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import { ArrowUpIcon } from './components/Icons';
 import Sidebar from './components/Sidebar';
 import MobileHeader from './components/MobileHeader';
+import Certificates from './components/Certificates';
 import './App.css';
 
 
@@ -17,7 +18,7 @@ export default function App() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['about', 'journey', 'skills', 'projects', 'contact'];
+            const sections = ['about', 'journey', 'skills', 'projects','certificates', 'contact'];
             const scrollPosition = window.scrollY + window.innerHeight / 2;
 
             for (const section of sections) {
@@ -48,6 +49,7 @@ export default function App() {
                         <Journey />
                         <Projects />
                         <Skills />
+                        <Certificates />
                         <Contact />
                     </div>
                 </main>
