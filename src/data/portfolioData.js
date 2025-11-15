@@ -64,7 +64,7 @@ export const projectsData = [
   {
     name: "Daily Dine",
     description:
-      "Daily Dine is an end-to-end Mess Management System built to digitalize and automate meal subscription and tracking processes for college and hostel messes. The system offers distinct roles for Super Admin, Mess Owner, and Customer, each with tailored dashboards and secure access. The backend, developed in Spring Boot, is deployed on Microsoft Azure, while the admin panel built using React.js is hosted on GitHub Pages. The project includes seamless integration of QR-based meal tracking, online payments (Razorpay/Paytm), subscription management, and real-time reporting.",
+      " Developing a full-stack Mess Management System to automate meal subscriptions and tracking for college messes. Features include QR-based meal validation, Firebase authentication for multiple roles, real-time admin analytics, and a robust backend with secure RESTful API endpoints.",
     tags: ["Flutter", "Spring Boot", "React.js", "Azure", "GitHub Pages"],
     category: ["Mobile", "Web"],
     link: "",
@@ -76,7 +76,7 @@ export const projectsData = [
   {
     name: "Business Sehyogi",
     description:
-      "A comprehensive platform for aspiring entrepreneurs to connect, collaborate on ideas, and find resources.",
+      "Developed a platform connecting aspiring entrepreneurs, reducing networking time by 20% and boosting collaboration success by 30%. Built and deployed a scalable system ensuring 247 availability and seamless performance.",
     tags: ["Flutter", "Spring Boot", "React.js", "Azure"],
     category: ["Web", "Mobile"],
     link: "#",
@@ -88,7 +88,7 @@ export const projectsData = [
   {
     name: "Arogya Sair",
     description:
-      "A mobile app to streamline medical appointment booking, connecting patients, hospitals, and doctors.",
+      " Led the development of a mobile app that streamlined medical appointment booking, reducing patient wait times by 30%. Built a real-time collaborative platform with hospital search, appointment scheduling, and live status updates.",
     tags: ["Flutter", "Core PHP", "Firebase"],
     category: ["Web", "Mobile"],
     link: "https://appetize.io/app/b_vmpbr36cosojks4geo3zbcfg3a?device=pixel7&osVersion=13.0&toolbar=true",
@@ -102,7 +102,7 @@ export const projectsData = [
   {
     name: "Brunch",
     description:
-      "An Android app to modernize restaurant order and menu management with a dual-user system (admin/staff).",
+      "Designed and developed an Android app to modernize restaurant order and menu management, featuring dual-user access for admins and staff to boost efficiency and reduce errors. Implemented SQLite for offline data storage and fast retrieval.",
     tags: ["Android (Kotlin)", "SQLite"],
     category: "Mobile",
     link: "#",
@@ -163,4 +163,17 @@ export const certificates = [
     name: "Postman API Fundamentals Student Expert",
     url: "https://badgr.com/public/assertions/KV0PKt-JR_Sv-5Baex2yUw",
   },
+];
+
+export const ongoingCertificates = [
+  {
+    name: "Flutter and Dart: Developing iOS, Android, and Mobile Apps",
+    platform: "Coursera",
+    url: "https://www.coursera.org/learn/flutter-and-dart-developing-ios-android-mobile-apps/"
+  },
+  {
+    name: "Master Java, Spring and Spring Boot, Spring Security, Spring AI, Docker and Microservices with Telusko",
+    platform: "Udemy",
+    url: "https://www.udemy.com/course/spring-5-with-spring-boot-2/?couponCode=ACCAGE0923"
+  }
 ];

@@ -1,9 +1,9 @@
 import React from 'react';
 import { user } from '../data/portfolioData';
-import { GitHubIcon, LinkedInIcon, EmailIcon } from './Icons';
+import { GitHubIcon, LinkedInIcon, EmailIcon } from './Icons.jsx';
 
 const Sidebar = ({ activeSection }) => {
-    const navItems = ['about', 'education', 'work-experience', 'projects', 'skills', 'certificates', 'contact'];
+    const navItems = ['about', 'education', 'work-experience', 'projects', 'skills','ongoing-learning' ,'certificates', 'contact'];
     const scrollToSection = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
     return (

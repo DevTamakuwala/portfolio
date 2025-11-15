@@ -11,6 +11,7 @@ import MobileHeader from './components/MobileHeader';
 import Certificates from './components/Certificates';
 import WorkExperience from './components/WorkExperience';
 import './App.css';
+import OngoingCertificates from './components/OngoingCertificates';
 
 
 export default function App() {
@@ -19,7 +20,7 @@ export default function App() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['about', 'education', 'work-experience', 'projects', 'skills', 'certificates', 'contact'];
+            const sections = ['about', 'education', 'work-experience', 'projects', 'skills', 'ongoing-learning', 'certificates', 'contact'];
             const scrollPosition = window.scrollY + window.innerHeight / 2;
 
             for (const section of sections) {
@@ -51,6 +52,7 @@ export default function App() {
                         <WorkExperience />
                         <Projects />
                         <Skills />
+                        <OngoingCertificates />
                         <Certificates />
                         <Contact />
                     </div>
