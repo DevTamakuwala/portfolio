@@ -140,6 +140,11 @@ export const Workexperience = [
 
 export const certificates = [
   {
+    name: "Flutter and Dart: Developing iOS, Android, and Mobile Apps",
+    platform: "Coursera",
+    url: "https://www.coursera.org/learn/flutter-and-dart-developing-ios-android-mobile-apps/"
+  },
+  {
     name: "React Native by Meta",
     url: "https://www.coursera.org/account/accomplishments/verify/4SJGMDFJ9Z9W",
   },
@@ -166,11 +171,6 @@ export const certificates = [
 ];
 
 export const ongoingCertificates = [
-  {
-    name: "Flutter and Dart: Developing iOS, Android, and Mobile Apps",
-    platform: "Coursera",
-    url: "https://www.coursera.org/learn/flutter-and-dart-developing-ios-android-mobile-apps/"
-  },
   {
     name: "Master Java, Spring and Spring Boot, Spring Security, Spring AI, Docker and Microservices with Telusko",
     platform: "Udemy",
