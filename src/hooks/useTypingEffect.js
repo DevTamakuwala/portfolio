@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const useTypingEffect = (words, typingSpeed = 100, deletingSpeed = 50, delay = 2000) => {
     const [text, setText] = useState('');
