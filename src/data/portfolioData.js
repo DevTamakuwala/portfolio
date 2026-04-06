@@ -153,17 +153,25 @@ export const Workexperience = [
     role: "Flutter Team Lead",
     location: "Pune, Maharashtra",
     description:
-      "Led the Flutter development team to build a cross-platform mobile application with offline-first architecture and scalable design.",
+      "Led the Flutter development team to build WPU Immersions, a cross-platform mobile application with offline-first architecture and scalable design.",
     highlights: [
       "Designed and implemented responsive UI/UX across devices and network conditions.",
       "Integrated RESTful APIs and coordinated data synchronization with the backend team.",
       "Optimized application performance using efficient state management and code reviews.",
-      "Delivered WPU Immersions application as internship proof-of-work.",
+      "Delivered WPU Immersions application as internship proof-of-work, now live on Play Store and App Store.",
     ],
     proofLinks: [
       {
         label: "View MIT WPU Internship Proof Of Work",
         url: "/pow_mitwpu_dev_tamakuwala.pdf",
+      },
+      {
+        label: "WPU Immersions on Play Store",
+        url: "https://play.google.com/store/apps/details?id=com.mitwpu.immersions&pcampaignid=web_share",
+      },
+      {
+        label: "WPU Immersions on App Store",
+        url: "https://apps.apple.com/in/app/wpu-immersions/id6758524763",
       },
     ],
     tags: ["Flutter", "Offline-first", "REST APIs", "State Management"],
