@@ -85,7 +85,7 @@ export const projectsData = [
     github: true,
     githubLink: "https://devtamakuwala.github.io/daily-dine-pro-full-project/",
     startDate: "Aug 2025",
-    endDate: "Present",
+    endDate: "Dec 2025",
   },
   {
     name: "Business Sehyogi",
@@ -203,6 +203,7 @@ export const certificates = [
     name: "Java Data Structures & Algorithms + LeetCode Exercises",
     platform: "Udemy",
     url: "https://www.udemy.com/certificate/UC-55d8acff-9ce0-417e-8992-dd4b47e57604/",
+    pdf: "/java+leetcode.pdf",
   },
 ];
 
