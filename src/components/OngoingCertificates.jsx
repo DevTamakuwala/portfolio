@@ -12,28 +12,27 @@ const OngoingCertificates = () => {
         
         {/* Check if there are certificates before rendering the list */}
         {ongoingCertificates.length > 0 ? (
-          <ul className="text-gray-300 leading-relaxed space-y-2 list-disc list-inside">
-            {/* Map over the certificates data to create list items dynamically */}
+          <div className="space-y-3">
             {ongoingCertificates.map((cert, index) => (
-              <li key={index}>
+              <div key={index} className="rounded-lg bg-gray-800/50 p-4">
                 {cert.url ? (
                   <a
                     href={cert.url}
                     target="_blank"
-                    rel="noreferrer" // Added for security and best practices
-                    className="underline hover:text-cyan-400 transition-colors"
+                    rel="noreferrer"
+                    className="text-gray-100 font-semibold hover:text-cyan-400 transition-colors"
                   >
                     {cert.name}
                   </a>
                 ) : (
-                  <span>{cert.name}</span>
+                  <span className="text-gray-100 font-semibold">{cert.name}</span>
                 )}
-                {cert.platform && (
-                  <span className="text-gray-400 text-sm"> - {cert.platform}</span>
-                )}
-              </li>
+                <div className="mt-1 text-sm text-gray-400">
+                  {cert.platform && <span>{cert.platform}</span>}
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         ) : (
           <p className="text-gray-400">Currently focused on core projects and academics.</p>
         )}

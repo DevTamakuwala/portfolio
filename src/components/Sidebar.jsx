@@ -3,21 +3,21 @@ import { user } from '../data/portfolioData';
 import { GitHubIcon, LinkedInIcon, EmailIcon } from './Icons.jsx';
 
 const Sidebar = ({ activeSection }) => {
-    const navItems = ['about', 'education', 'work-experience', 'projects', 'skills','ongoing-learning' ,'certificates', 'contact'];
+    const navItems = ['about', 'resume', 'education', 'work-experience', 'projects', 'skills','ongoing-learning' ,'certificates', 'contact'];
     const scrollToSection = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
     return (
         <aside className="fixed top-0 left-0 h-full w-1/4 p-10 flex-col justify-between hidden lg:flex glass-effect">
             <div>
                 <div className="flex items-center gap-4">
-                    {user.avatar ? (
+                    {/* {user.avatar ? (
                         <img src={process.env.PUBLIC_URL + '/' + user.avatar} alt={`${user.name} avatar`} className="h-20 w-20 rounded-full border-2 border-cyan-400 p-0 m-0 object-cover" />
                     ) : (
                         <div className="h-20 w-20 rounded-full bg-gray-700 flex items-center justify-center text-cyan-400 font-bold">{user.name.split(' ').map(n => n[0]).slice(0,2).join('')}</div>
-                    )}
+                    )} */}
                     <div>
                         <h1 className="text-2xl sm:text-4xl font-bold text-cyan-400">{user.name}</h1>
-                        <h2 className="text-sm sm:text-lg mt-1 text-gray-300">Pune, Maharashtra</h2>
+                        <h2 className="text-sm sm:text-lg mt-1 text-gray-300">{user.location} · {user.availability}</h2>
                     </div>
                 </div>
                 <nav className="mt-12">

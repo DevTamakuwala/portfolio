@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import { ArrowUpIcon } from './components/Icons';
 import Sidebar from './components/Sidebar';
 import MobileHeader from './components/MobileHeader';
+import Resume from './components/Resume';
 import Certificates from './components/Certificates';
 import WorkExperience from './components/WorkExperience';
 import './App.css';
@@ -20,7 +21,7 @@ export default function App() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['about', 'education', 'work-experience', 'projects', 'skills', 'ongoing-learning', 'certificates', 'contact'];
+            const sections = ['about', 'resume', 'education', 'work-experience', 'projects', 'skills', 'ongoing-learning', 'certificates', 'contact'];
             const scrollPosition = window.scrollY + window.innerHeight / 2;
 
             for (const section of sections) {
@@ -48,6 +49,7 @@ export default function App() {
                 <main className="lg:ml-[25%] pt-16 lg:pt-0">
                     <div className="max-w-4xl mx-auto p-4">
                         <About />
+                        <Resume />
                         <Journey />
                         <WorkExperience />
                         <Projects />

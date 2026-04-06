@@ -14,9 +14,16 @@ const About = () => {
                     <span className="animate-ping">|</span>
                 </h2>
                 <p className="mt-4 sm:mt-8 max-w-xl text-gray-300 leading-relaxed">{user.bio}</p>
+                <div className="mt-5 flex flex-wrap gap-2 text-sm text-gray-300">
+                    <span className="px-3 py-1 rounded-full bg-gray-800/70 border border-gray-700">{user.location}</span>
+                    <span className="px-3 py-1 rounded-full bg-gray-800/70 border border-gray-700">{user.availability}</span>
+                    {user.languages.map((language) => (
+                        <span key={language} className="px-3 py-1 rounded-full bg-gray-800/70 border border-gray-700">{language}</span>
+                    ))}
+                </div>
                 <a href={process.env.PUBLIC_URL + '/' + user.cv} download
                    className="mt-6 sm:mt-12 inline-block bg-cyan-400 text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-cyan-300 transition-colors duration-300 shadow-lg shadow-cyan-500/20">
-                   Download CV
+                         Show Resume
                 </a>
             </div>
         </Section>

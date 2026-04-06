@@ -69,9 +69,17 @@ const WorkExperience = () => {
                 <h3 className="text-lg font-bold text-gray-200 mt-1 group-hover:text-cyan-400 transition-colors">
                   {project.name}
                 </h3>
+                {project.role && (
+                  <p className="text-sm text-cyan-400 mt-1 font-semibold">
+                    {project.role}
+                  </p>
+                )}
                 <p className="text-sm text-gray-400 mt-1">
                   {project.startDate} - {project.endDate}
                 </p>
+                {project.location && (
+                  <p className="text-sm text-gray-400 mt-1">{project.location}</p>
+                )}
                 <p className="text-sm text-gray-400 mt-1">
                   {Array.isArray(project.category)
                     ? project.category.join(" • ")
@@ -80,6 +88,14 @@ const WorkExperience = () => {
                 <p className="text-md text-gray-300 mt-2">
                   {project.description}
                 </p>
+
+                {Array.isArray(project.highlights) && project.highlights.length > 0 && (
+                  <ul className="mt-3 space-y-2 text-gray-400 list-disc list-inside">
+                    {project.highlights.map((highlight, highlightIndex) => (
+                      <li key={`${project.name}-highlight-${highlightIndex}`}>{highlight}</li>
+                    ))}
+                  </ul>
+                )}
 
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {(() => {
@@ -129,6 +145,25 @@ const WorkExperience = () => {
                 </ul>
 
                 <div className="mt-4 flex flex-wrap gap-4">
+                  {Array.isArray(project.proofLinks) &&
+                    project.proofLinks.map((proof, proofIndex) => {
+                      const proofUrl = proof.url?.startsWith("/")
+                        ? process.env.PUBLIC_URL + proof.url
+                        : proof.url;
+
+                      return (
+                        <a
+                          key={`${project.name}-proof-${proofIndex}`}
+                          href={proofUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-sm font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-2"
+                        >
+                          {proof.label || "Proof of Work"} <LinkIcon />
+                        </a>
+                      );
+                    })}
+
                   {project.demo && (
                     <a
                       href={project.link}
