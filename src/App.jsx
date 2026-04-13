@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MouseTracker from './components/MouseTracker';
 import About from './components/About';
 import Journey from './components/Journey';
@@ -13,9 +14,10 @@ import Certificates from './components/Certificates';
 import WorkExperience from './components/WorkExperience';
 import './App.css';
 import OngoingCertificates from './components/OngoingCertificates';
+import Docs from './pages/docs/Docs';
+import SEO from './components/SEO';
 
-
-export default function App() {
+function Portfolio() {
     const [activeSection, setActiveSection] = useState('about');
     const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -42,6 +44,7 @@ export default function App() {
 
     return (
         <div>
+            <SEO />
             <MouseTracker /> {/* This will now act as a fixed background */}
             <div className="relative z-10">
                 <MobileHeader />
@@ -69,3 +72,14 @@ export default function App() {
     );
 }
 
+export default function App() {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Portfolio />} />
+                <Route path="/documentation/smarti18nauto" element={<Docs />} />
+                <Route path="/documentation/smarti18nauto/:section" element={<Docs />} />
+            </Routes>
+        </Router>
+    );
+}
