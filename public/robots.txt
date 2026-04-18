@@ -1,3 +1,26 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt for Dev Tamakuwala
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /api/get-results
+Disallow: /api/get-toppers
+Disallow: /api/download-apk
+Disallow: /download-app
+Disallow: /_next/
+Disallow: /_static/
+Disallow: /admin
+
+# Allow sitemap crawling
+Allow: /sitemap.xml
+
+# Sitemap
+Sitemap: https://devtamakuwala.in/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
