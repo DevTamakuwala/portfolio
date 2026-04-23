@@ -65,6 +65,13 @@ ${docUrls}
   if (fs.existsSync(buildDir)) {
     fs.writeFileSync(path.join(buildDir, 'sitemap.xml'), sitemap.trim());
     console.log('✅ Successfully generated sitemap.xml in build folder');
+
+    // Copy index.html to 404.html for proper 404 HTTP status on static hosts like GitHub Pages
+    const buildIndex = path.join(buildDir, 'index.html');
+    if (fs.existsSync(buildIndex)) {
+      fs.copyFileSync(buildIndex, path.join(buildDir, '404.html'));
+      console.log('✅ Created 404.html as a copy of index.html in build folder');
+    }
   }
 
   console.log('✅ Successfully generated sitemap.xml in public folder');

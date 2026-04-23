@@ -1,0 +1,8 @@
+{
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "^/$", "dest": "/index.html" },
+    { "src": "^/documentation/smarti18nauto(/.*)?$", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/index.html", "status": 410 }
+  ]
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const SEO = ({ title, description, url, jsonLdSchema }) => {
+const SEO = ({ title, description, url, jsonLdSchema, noindex }) => {
   const defaultTitle = 'Dev Tamakuwala — Portfolio';
   const defaultDesc = 'Senior Tech Lead specializing in building robust, user-centric, and scalable software solutions. Explore my projects, skills, and experience.';
   
@@ -15,6 +15,7 @@ const SEO = ({ title, description, url, jsonLdSchema }) => {
       <title>{finalTitle}</title>
       <meta name="description" content={finalDesc} />
       <link rel="canonical" href={finalUrl} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
 
       {/* Open Graph Tags */}
       <meta property="og:title" content={finalTitle} />

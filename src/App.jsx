@@ -16,6 +16,7 @@ import './App.css';
 import OngoingCertificates from './components/OngoingCertificates';
 import Docs from './pages/docs/Docs';
 import SEO from './components/SEO';
+import NotFound from './pages/NotFound';
 
 function Portfolio() {
     const [activeSection, setActiveSection] = useState('about');
@@ -79,6 +80,7 @@ export default function App() {
                 <Route path="/" element={<Portfolio />} />
                 <Route path="/documentation/smarti18nauto" element={<Docs />} />
                 <Route path="/documentation/smarti18nauto/:section" element={<Docs />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </Router>
     );
