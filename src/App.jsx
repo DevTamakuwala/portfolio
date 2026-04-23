@@ -17,6 +17,7 @@ import OngoingCertificates from './components/OngoingCertificates';
 import Docs from './pages/docs/Docs';
 import SEO from './components/SEO';
 import NotFound from './pages/NotFound';
+import { Analytics } from "@vercel/analytics/react"
 
 function Portfolio() {
     const [activeSection, setActiveSection] = useState('about');
@@ -76,6 +77,7 @@ function Portfolio() {
 export default function App() {
     return (
         <Router>
+            <Analytics />
             <Routes>
                 <Route path="/" element={<Portfolio />} />
                 <Route path="/documentation/smarti18nauto" element={<Docs />} />
