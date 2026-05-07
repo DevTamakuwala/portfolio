@@ -22,6 +22,10 @@ const docsSections = [
   'performance',
   'security',
   'testing',
+  'release-checklist',
+  'roadmap',
+  'contributing',
+  'license',
   'faq'
 ];
 

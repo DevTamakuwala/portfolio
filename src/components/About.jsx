@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Section from './Section';
 import { user } from '../data/portfolioData';
 import useTypingEffect from '../hooks/useTypingEffect';
+import { LinkIcon } from './Icons';
 
 const About = () => {
     const animatedTitle = useTypingEffect(user.titles);
@@ -23,18 +24,31 @@ const About = () => {
                     ))}
                 </div>
                 <div className="mt-6 sm:mt-12 flex flex-wrap gap-4">
-                    <a href={process.env.PUBLIC_URL + '/' + user.cv} download
-                       className="inline-block bg-cyan-400 text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-cyan-300 transition-colors duration-300 shadow-lg shadow-cyan-500/20">
-                             Show Resume
+                    <a
+                        href={process.env.PUBLIC_URL + '/' + user.cv}
+                        download
+                        className="inline-block bg-cyan-400 text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-cyan-300 transition-colors duration-300 shadow-lg shadow-cyan-500/20"
+                    >
+                        Show Resume
                     </a>
-                    <Link to="/documentation/smarti18nauto"
-                       className="docs-cta-btn inline-flex items-center gap-2 border-2 border-cyan-400 text-cyan-400 font-bold py-3 px-6 rounded-lg transition-all duration-300 relative overflow-hidden"
-                       style={{ animation: 'docsBtnGlow 2s ease-in-out infinite' }}>
+                    <Link
+                        to="/documentation/smarti18nauto"
+                        className="docs-cta-btn inline-flex items-center gap-2 border-2 border-cyan-400 text-cyan-400 font-bold py-3 px-6 rounded-lg transition-all duration-300 relative overflow-hidden"
+                        style={{ animation: 'docsBtnGlow 2s ease-in-out infinite' }}
+                    >
                         <span className="relative z-10 flex items-center gap-2">
-                            <span>📄</span> Check auto Internationalization in spring boot
+                            <span>Docs</span> Check auto Internationalization in spring boot
                         </span>
                         <span className="docs-cta-shimmer" />
                     </Link>
+                    <a
+                        href="https://i18n.webdemo.devtamakuwala.in/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 bg-gray-800/80 border-2 border-gray-700 text-cyan-400 font-bold py-3 px-6 rounded-lg hover:border-cyan-400 hover:bg-gray-800 transition-all duration-300"
+                    >
+                        Demo Website <LinkIcon />
+                    </a>
                     <style>{`
                         @keyframes docsBtnGlow {
                             0%, 100% {

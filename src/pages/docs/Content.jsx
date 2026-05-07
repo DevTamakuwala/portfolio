@@ -5,7 +5,6 @@ import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-/* ── Code block with copy button ─────────────────────────── */
 const CodeBlock = ({ language, children }) => {
   const [copied, setCopied] = useState(false);
   const code = String(children).replace(/\n$/, '');
@@ -21,7 +20,7 @@ const CodeBlock = ({ language, children }) => {
       <div className="code-block-header">
         <span className="code-block-lang">{language || 'text'}</span>
         <button className={`code-copy-btn ${copied ? 'copied' : ''}`} onClick={handleCopy}>
-          {copied ? '✓ Copied' : '⎘ Copy'}
+          {copied ? 'Copied' : 'Copy'}
         </button>
       </div>
       <SyntaxHighlighter
@@ -44,7 +43,6 @@ const CodeBlock = ({ language, children }) => {
   );
 };
 
-/* ── Custom markdown components ──────────────────────────── */
 const markdownComponents = {
   code({ inline, className, children, ...props }) {
     const match = /language-(\w+)/.exec(className || '');
@@ -61,7 +59,6 @@ const markdownComponents = {
   },
 };
 
-/* ── Content component ───────────────────────────────────── */
 const Content = ({ slug, prevSection, nextSection }) => {
   const [markdown, setMarkdown] = useState('');
   const [loading, setLoading] = useState(true);
@@ -105,17 +102,16 @@ const Content = ({ slug, prevSection, nextSection }) => {
         {markdown}
       </ReactMarkdown>
 
-      {/* Prev / Next navigation */}
       <div className="docs-footer-nav">
         {prevSection ? (
           <Link to={`/documentation/smarti18nauto/${prevSection.slug}`} className="docs-footer-link prev">
-            <span className="docs-footer-label">← Previous</span>
+            <span className="docs-footer-label">Previous</span>
             <span className="docs-footer-title">{prevSection.title}</span>
           </Link>
         ) : <div />}
         {nextSection ? (
           <Link to={`/documentation/smarti18nauto/${nextSection.slug}`} className="docs-footer-link next">
-            <span className="docs-footer-label">Next →</span>
+            <span className="docs-footer-label">Next</span>
             <span className="docs-footer-title">{nextSection.title}</span>
           </Link>
         ) : <div />}

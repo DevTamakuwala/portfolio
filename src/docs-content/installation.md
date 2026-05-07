@@ -1,6 +1,6 @@
 # Installation
 
-Add **smart-i18n-auto** to your Spring Boot 4 project.
+Add **smart-i18n-auto** to a Spring Boot 4 application.
 
 ## Maven
 
@@ -18,13 +18,9 @@ Add **smart-i18n-auto** to your Spring Boot 4 project.
 implementation 'in.devtamakuwala:smart-i18n-auto:1.0.0'
 ```
 
-> Use the latest released version when a newer one is available on Maven Central.
+Use the latest released version when a newer version is available on Maven Central.
 
----
-
-## Maven Central
-
-Coordinates:
+## Maven Central Coordinates
 
 ```xml
 <dependency>
@@ -34,8 +30,21 @@ Coordinates:
 </dependency>
 ```
 
-- **GroupId namespace:** `in.devtamakuwala`
-- **ArtifactId:** `smart-i18n-auto`
-- **Repository:** [github.com/DevTamakuwala/smart-i18n-auto](https://github.com/DevTamakuwala/smart-i18n-auto)
+| Field | Value |
+|-------|-------|
+| GroupId | `in.devtamakuwala` |
+| ArtifactId | `smart-i18n-auto` |
+| Version | `1.0.0` |
+| Repository | `https://github.com/DevTamakuwala/smart-i18n-auto` |
 
-> **Note:** smart-i18n-auto is a **pure library JAR** — no main class, no embedded server. It auto-configures itself via Spring Boot's `@AutoConfiguration`.
+## Requirements
+
+- Java 21+
+- Spring Boot 4.x
+- Maven or Gradle
+- At least one supported translation provider API key
+
+## Library Behavior
+
+smart-i18n-auto is a pure library JAR. It does not ship a main class, does not start an embedded server by itself, and does not require `spring-boot-starter-web` inside the library artifact. It is auto-configured by Spring Boot when included in your application.
+

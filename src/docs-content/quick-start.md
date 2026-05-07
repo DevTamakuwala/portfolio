@@ -1,6 +1,6 @@
 # Quick Start
 
-Get up and running in under 5 minutes.
+Get a translated endpoint running in a few minutes.
 
 ## 1. Add the Dependency
 
@@ -40,16 +40,16 @@ public class ProductController {
 curl -H "Accept-Language: fr" http://localhost:8080/products/1
 ```
 
-**Response:**
+## Example Response
 
 ```json
 {
   "name": "Souris sans fil",
-  "description": "Idéal pour le gaming",
+  "description": "Ideal pour le gaming",
   "price": 29.99
 }
 ```
 
 That's it. No message bundles. No `LocaleResolver`. No boilerplate.
 
-> **Note:** `price` (a number) is automatically skipped — only string values are translated.
+`price` is a number, so it is automatically skipped. Only eligible string values are translated.

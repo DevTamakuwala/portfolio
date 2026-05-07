@@ -3,80 +3,104 @@
 
   <url>
     <loc>https://devtamakuwala.in/</loc>
-    <lastmod>2026-04-23T19:14:55.543Z</lastmod>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://devtamakuwala.in/documentation/smarti18nauto/introduction</loc>
-    <lastmod>2026-04-23T19:14:55.543Z</lastmod>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://devtamakuwala.in/documentation/smarti18nauto/installation</loc>
-    <lastmod>2026-04-23T19:14:55.543Z</lastmod>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://devtamakuwala.in/documentation/smarti18nauto/quick-start</loc>
-    <lastmod>2026-04-23T19:14:55.543Z</lastmod>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://devtamakuwala.in/documentation/smarti18nauto/configuration</loc>
-    <lastmod>2026-04-23T19:14:55.543Z</lastmod>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://devtamakuwala.in/documentation/smarti18nauto/annotations</loc>
-    <lastmod>2026-04-23T19:14:55.543Z</lastmod>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://devtamakuwala.in/documentation/smarti18nauto/architecture</loc>
-    <lastmod>2026-04-23T19:14:55.543Z</lastmod>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://devtamakuwala.in/documentation/smarti18nauto/examples</loc>
-    <lastmod>2026-04-23T19:14:55.543Z</lastmod>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://devtamakuwala.in/documentation/smarti18nauto/curl-examples</loc>
-    <lastmod>2026-04-23T19:14:55.543Z</lastmod>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://devtamakuwala.in/documentation/smarti18nauto/performance</loc>
-    <lastmod>2026-04-23T19:14:55.543Z</lastmod>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://devtamakuwala.in/documentation/smarti18nauto/security</loc>
-    <lastmod>2026-04-23T19:14:55.543Z</lastmod>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://devtamakuwala.in/documentation/smarti18nauto/testing</loc>
-    <lastmod>2026-04-23T19:14:55.543Z</lastmod>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://devtamakuwala.in/documentation/smarti18nauto/release-checklist</loc>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://devtamakuwala.in/documentation/smarti18nauto/roadmap</loc>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://devtamakuwala.in/documentation/smarti18nauto/contributing</loc>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://devtamakuwala.in/documentation/smarti18nauto/license</loc>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://devtamakuwala.in/documentation/smarti18nauto/faq</loc>
-    <lastmod>2026-04-23T19:14:55.543Z</lastmod>
+    <lastmod>2026-05-07T05:00:44.078Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

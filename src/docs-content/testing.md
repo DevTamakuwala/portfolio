@@ -1,12 +1,12 @@
 # Testing Locally
 
-Step-by-step guide to test smart-i18n-auto on your machine.
+Use this guide to test smart-i18n-auto on your machine.
 
 ## Prerequisites
 
 - Java 21+
 - Maven 3.9+
-- At least one API key (Gemini is free-tier friendly)
+- At least one provider API key
 
 ## Step 1: Build and Install Locally
 
@@ -15,11 +15,11 @@ cd smart-i18n-auto
 mvn clean install -Dgpg.skip=true
 ```
 
-This installs `smart-i18n-auto-1.0.0.jar` into your local `~/.m2/repository`.
+This installs `smart-i18n-auto-1.0.0.jar` into your local Maven repository.
 
 ## Step 2: Create a Test Application
 
-Create a new Spring Boot 4 project and add the dependency:
+Create a Spring Boot 4 project and add:
 
 ```xml
 <dependency>
@@ -30,8 +30,6 @@ Create a new Spring Boot 4 project and add the dependency:
 ```
 
 ## Step 3: Configure a Provider
-
-**`application.properties`:**
 
 ```properties
 smart.i18n.gemini.api-key=YOUR_GEMINI_API_KEY
@@ -99,69 +97,51 @@ public class TestController {
 mvn spring-boot:run
 ```
 
-### Test Basic Translation
+### Basic Translation
 
 ```bash
 curl -s -H "Accept-Language: es" http://localhost:8080/api/test/simple | jq
 ```
 
-**Expected:**
+Expected shape:
 
 ```json
 {
   "greeting": "Hola Mundo",
-  "farewell": "Adiós y gracias por todos los peces"
+  "farewell": "Adios y gracias por todos los peces"
 }
 ```
 
-### Test Nested DTO
+### Nested DTO
 
 ```bash
 curl -s -H "Accept-Language: ja" http://localhost:8080/api/test/product | jq
 ```
 
-**Expected:**
+`price` and `sku` should stay unchanged while eligible string fields are translated.
 
-```json
-{
-  "name": "ワイヤレスマウス",
-  "description": "ゲームに最適",
-  "price": 29.99,
-  "sku": "SKU-001",
-  "category": {
-    "title": "エレクトロニクス",
-    "description": "ガジェットとデバイス"
-  }
-}
-```
-
-> Notice: `price` (number) and `sku` (`@SkipTranslation`) are untouched.
-
-### Test List of DTOs
+### List of DTOs
 
 ```bash
 curl -s -H "Accept-Language: fr" http://localhost:8080/api/test/list | jq
 ```
 
-### Test Same Language (No API Call)
+### Same Language
 
 ```bash
 curl -s -H "Accept-Language: en" http://localhost:8080/api/test/simple | jq
 ```
 
-Response is returned instantly with original English text — no provider API call made.
+The original English response is returned without a provider call.
 
 ### Validate Caching
 
 ```bash
-# First call — watch for "Translating X unique uncached strings" in logs
 curl -s -H "Accept-Language: de" http://localhost:8080/api/test/simple | jq
-
-# Second call — watch for "All X unique strings were cache hits" in logs
 curl -s -H "Accept-Language: de" http://localhost:8080/api/test/simple | jq
 ```
 
-Set logging to debug for full visibility:
+Enable debug logging for full visibility:
 
 ```properties
 logging.level.in.devtamakuwala.smarti18nauto=DEBUG
@@ -180,11 +160,9 @@ curl -s -X POST http://localhost:8080/api/test/feedback \
   -d '{"message": "Bonjour le monde"}' | jq
 ```
 
-The incoming `message` is translated to English before your controller processes it.
+The incoming `message` is translated to English before controller processing.
 
 ### Test Deduplication
-
-Create a DTO with duplicate fields and check logs:
 
 ```java
 @GetMapping("/duplicates")
@@ -203,4 +181,5 @@ public Map<String, String> duplicates() {
 curl -s -H "Accept-Language: fr" http://localhost:8080/api/test/duplicates | jq
 ```
 
-Logs will show: `Translating 2 unique uncached strings (out of 2 unique, 4 total refs)` — only 2 unique texts sent to the API, not 4.
+Only two unique texts are sent to the provider.
+

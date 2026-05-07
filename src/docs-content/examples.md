@@ -1,30 +1,29 @@
 # Examples
 
-Real-world usage patterns with DTOs, controllers, and request body translation.
-
----
+Real-world usage patterns with DTOs, controllers, nested objects, request translation, and deduplication.
 
 ## DTO with Nested Objects
 
 ```java
 public class OrderDto {
-    private String orderId;                    // auto-skipped (short/ID-like)
-    private String status;                     // "PENDING" — auto-skipped (enum)
+    private String orderId;                    // auto-skipped when ID-like
+    private String status;                     // "PENDING" is auto-skipped as enum-like
     private CustomerDto customer;              // recursively traversed
     private List<OrderItemDto> items;          // list elements traversed
     private Map<String, String> metadata;      // map values translated
 }
 
 public class CustomerDto {
-    private String name;                       // "John Doe" → translated
+    private String name;                       // translated
+
     @SkipTranslation
-    private String email;                      // "john@example.com" — skipped
+    private String email;                      // skipped
 }
 
 public class OrderItemDto {
-    private String productName;                // "Wireless Mouse" → translated
-    private String description;                // "Great for gaming" → translated
-    private double price;                      // 29.99 — auto-skipped
+    private String productName;                // translated
+    private String description;                // translated
+    private double price;                      // auto-skipped
 }
 ```
 
@@ -49,16 +48,14 @@ public class OrderController {
 
     @GetMapping
     public List<OrderDto> getAllOrders() {
-        return orderService.findAll();  // list of DTOs — all translated
+        return orderService.findAll();
     }
 }
 ```
 
----
+## Request Body Translation
 
-## Request Body Translation (Opt-In)
-
-Normalize incoming request bodies to English before processing:
+Enable inbound request body translation:
 
 ```properties
 smart.i18n.translate-request-body=true
@@ -72,13 +69,11 @@ public class FeedbackController {
     @PostMapping
     @AutoTranslate
     public FeedbackDto submitFeedback(@RequestBody FeedbackDto feedback) {
-        // feedback.message is now in English (normalized from Accept-Language)
+        // feedback.message is normalized to English before this point.
         return feedbackService.save(feedback);
     }
 }
 ```
-
----
 
 ## Simple Map Response
 
@@ -98,22 +93,16 @@ public class TestController {
 }
 ```
 
-**Request:**
-
 ```bash
 curl -s -H "Accept-Language: es" http://localhost:8080/api/test/simple | jq
 ```
 
-**Response:**
-
 ```json
 {
   "greeting": "Hola Mundo",
-  "farewell": "Adiós y gracias por todos los peces"
+  "farewell": "Adios y gracias por todos los peces"
 }
 ```
-
----
 
 ## Nested DTO with @SkipTranslation
 
@@ -125,26 +114,22 @@ public ProductDto product() {
 }
 ```
 
-**With `Accept-Language: ja`:**
+With `Accept-Language: ja`, string content is translated while `price` and `sku` remain untouched.
 
 ```json
 {
-  "name": "ワイヤレスマウス",
-  "description": "ゲームに最適",
+  "name": "Wireless Mouse translated to Japanese",
+  "description": "Great for gaming translated to Japanese",
   "price": 29.99,
   "sku": "SKU-001",
   "category": {
-    "title": "エレクトロニクス",
-    "description": "ガジェットとデバイス"
+    "title": "Electronics translated to Japanese",
+    "description": "Gadgets and devices translated to Japanese"
   }
 }
 ```
 
-> Notice: `price` (number) and `sku` (`@SkipTranslation`) are untouched.
-
----
-
-## Deduplication in Action
+## Deduplication
 
 ```java
 @GetMapping("/duplicates")
@@ -159,4 +144,8 @@ public Map<String, String> duplicates() {
 }
 ```
 
-Logs show: `Translating 2 unique uncached strings (out of 2 unique, 4 total refs)` — only 2 unique texts sent to the API, not 4.
+The provider receives only two unique texts, not four total field values. Logs show a message like:
+
+```text
+Translating 2 unique uncached strings (out of 2 unique, 4 total refs)
+```
