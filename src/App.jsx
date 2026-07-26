@@ -13,7 +13,7 @@ import Resume from './components/Resume';
 import Certificates from './components/Certificates';
 import WorkExperience from './components/WorkExperience';
 import './App.css';
-import OngoingCertificates from './components/OngoingCertificates';
+// import OngoingCertificates from './components/OngoingCertificates';
 import Docs from './pages/docs/Docs';
 import SEO from './components/SEO';
 import NotFound from './pages/NotFound';

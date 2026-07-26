@@ -232,15 +232,15 @@ export const certificates = [
   },
 ];
 
-export const ongoingCertificates = [
-  // {
-  //   name: "Master Java, Spring Boot, Spring Security, Spring AI, Docker and Microservices",
-  //   platform: "Udemy",
-  //   url: "https://www.udemy.com/course/spring-5-with-spring-boot-2/?couponCode=ACCAGE0923",
-  // },
-  // {
-  //   name: "Master Microservices with Spring Boot and Spring Cloud Specialization",
-  //   platform: "Coursera",
-  //   url: "https://www.coursera.org/specializations/packt-master-microservices-with-spring-boot-and-spring-cloud",
-  // },
-];
+// export const ongoingCertificates = [
+// {
+//   name: "Master Java, Spring Boot, Spring Security, Spring AI, Docker and Microservices",
+//   platform: "Udemy",
+//   url: "https://www.udemy.com/course/spring-5-with-spring-boot-2/?couponCode=ACCAGE0923",
+// },
+// {
+//   name: "Master Microservices with Spring Boot and Spring Cloud Specialization",
+//   platform: "Coursera",
+//   url: "https://www.coursera.org/specializations/packt-master-microservices-with-spring-boot-and-spring-cloud",
+// },
+// ];
