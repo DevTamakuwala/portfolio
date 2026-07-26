@@ -182,10 +182,28 @@ export const Workexperience = [
 
 export const certificates = [
   {
-    name: "Foundations of Microservices and REST APIs with Spring Boot",
+    name: "Master Microservices with Spring Boot and Spring Cloud Specialization",
     platform: "Coursera",
     url: "https://www.coursera.org/specializations/packt-master-microservices-with-spring-boot-and-spring-cloud",
+    pdf: "/coursera_master_spring.pdf"
+  },
+  {
+    name: "Foundations of Microservices and REST APIs with Spring Boot",
+    platform: "Coursera",
+    url: "https://www.coursera.org/learn/packt-foundations-of-microservices-and-rest-apis-with-spring-boot-drlce",
     pdf: "/coursera_spring-microservice.pdf",
+  },
+  {
+    name: "Advanced Spring Cloud Microservices & Deployment with Docker",
+    platform: "Coursera",
+    url: "https://www.coursera.org/learn/packt-advanced-spring-cloud-microservices-and-deployment-with-docker-1nbvc",
+    pdf: "/coursera_advance_spring.pdf"
+  },
+  {
+    name: "Spring, JPA, Testing, and Legacy Microservices",
+    platform: "Coursera",
+    url: "https://www.coursera.org/learn/packt-spring-jpa-testing-and-legacy-microservices-jvjhr",
+    pdf: "coursera_spring_test.pdf"
   },
   {
     name: "Flutter and Dart: Developing iOS, Android, and Mobile Apps",
@@ -215,11 +233,11 @@ export const certificates = [
 ];
 
 export const ongoingCertificates = [
-  {
-    name: "Master Java, Spring Boot, Spring Security, Spring AI, Docker and Microservices",
-    platform: "Udemy",
-    url: "https://www.udemy.com/course/spring-5-with-spring-boot-2/?couponCode=ACCAGE0923",
-  },
+  // {
+  //   name: "Master Java, Spring Boot, Spring Security, Spring AI, Docker and Microservices",
+  //   platform: "Udemy",
+  //   url: "https://www.udemy.com/course/spring-5-with-spring-boot-2/?couponCode=ACCAGE0923",
+  // },
   {
     name: "Master Microservices with Spring Boot and Spring Cloud Specialization",
     platform: "Coursera",
