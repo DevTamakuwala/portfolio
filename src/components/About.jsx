@@ -24,13 +24,17 @@ const About = () => {
                     ))}
                 </div>
                 <div className="mt-6 sm:mt-12 flex flex-wrap gap-4">
-                    <a
-                        href={process.env.PUBLIC_URL + '/' + user.cv}
-                        download
-                        className="inline-block bg-cyan-400 text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-cyan-300 transition-colors duration-300 shadow-lg shadow-cyan-500/20"
+                    <button
+                        type="button"
+                        onClick={() => window.open(
+                            process.env.REACT_APP_RESUME_LINK || process.env.PUBLIC_URL + '/' + user.cv,
+                            "_blank",
+                            "noopener,noreferrer"
+                        )}
+                        className="inline-block bg-cyan-400 text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-cyan-300 transition-colors duration-300 shadow-lg shadow-cyan-500/20 cursor-pointer"
                     >
                         Show Resume
-                    </a>
+                    </button>
                     <Link
                         to="/documentation/smarti18nauto"
                         className="docs-cta-btn inline-flex items-center gap-2 border-2 border-cyan-400 text-cyan-400 font-bold py-3 px-6 rounded-lg transition-all duration-300 relative overflow-hidden"
