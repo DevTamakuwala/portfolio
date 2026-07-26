@@ -19,17 +19,16 @@ export const user = {
     website: "https://devtamakuwala.in",
   },
   languages: ["English", "Hindi", "Gujarati"],
-  cv: "/Dev_Tamakuwala.pdf",
 };
 
 export const resumeHighlights = [
   {
     label: "Core stack",
-    value: "Flutter, Spring Boot, REST APIs, Firebase, Azure",
+    value: "Spring Boot, REST APIs, Firebase, MySQL, PostgreSQL, Flutter",
   },
   {
     label: "Experience",
-    value: "Full stack developer, Flutter intern, Flutter team lead",
+    value: "Software Developer Intern, Flutter team lead",
   },
   {
     label: "Languages",
@@ -118,7 +117,7 @@ export const projectsData = [
 export const Workexperience = [
   {
     name: "Intellect Computers",
-    role: "Full stack developer (part time)",
+    role: "Full stack developer",
     location: "Surat, Gujarat",
     description:
       "Developed and deployed the institute's official website and currently building a cross-platform mobile application with backend services. The work includes scalable API design, deployment workflows, and collaboration with stakeholders.",
@@ -146,7 +145,7 @@ export const Workexperience = [
     tags: ["Flutter", "UI/UX", "APIs", "Testing"],
     category: ["Mobile", "Web"],
     startDate: "Jan 2026",
-    endDate: "Present",
+    endDate: "July 2026",
   },
   {
     name: "MIT World Peace University",

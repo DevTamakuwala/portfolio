@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Section from './Section';
 import { user } from '../data/portfolioData';
 import useTypingEffect from '../hooks/useTypingEffect';
-import { LinkIcon } from './Icons';
 
 const About = () => {
     const animatedTitle = useTypingEffect(user.titles);
@@ -26,11 +25,10 @@ const About = () => {
                 <div className="mt-6 sm:mt-12 flex flex-wrap gap-4">
                     <button
                         type="button"
-                        onClick={() => window.open(
-                            process.env.REACT_APP_RESUME_LINK || process.env.PUBLIC_URL + '/' + user.cv,
-                            "_blank",
-                            "noopener,noreferrer"
-                        )}
+                        onClick={() => {
+                            const el = document.getElementById('resume');
+                            if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        }}
                         className="inline-block bg-cyan-400 text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-cyan-300 transition-colors duration-300 shadow-lg shadow-cyan-500/20 cursor-pointer"
                     >
                         Show Resume
@@ -45,14 +43,6 @@ const About = () => {
                         </span>
                         <span className="docs-cta-shimmer" />
                     </Link>
-                    <a
-                        href="https://i18n.webdemo.devtamakuwala.in/"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 bg-gray-800/80 border-2 border-gray-700 text-cyan-400 font-bold py-3 px-6 rounded-lg hover:border-cyan-400 hover:bg-gray-800 transition-all duration-300"
-                    >
-                        Demo Website <LinkIcon />
-                    </a>
                     <style>{`
                         @keyframes docsBtnGlow {
                             0%, 100% {
