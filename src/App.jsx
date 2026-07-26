@@ -25,7 +25,7 @@ function Portfolio() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['about', 'resume', 'education', 'work-experience', 'projects', 'skills', 'ongoing-learning', 'certificates', 'contact'];
+            const sections = ['about', 'resume', 'education', 'work-experience', 'projects', 'skills', 'certificates', 'contact'];
             const scrollPosition = window.scrollY + window.innerHeight / 2;
 
             for (const section of sections) {
@@ -59,7 +59,7 @@ function Portfolio() {
                         <WorkExperience />
                         <Projects />
                         <Skills />
-                        <OngoingCertificates />
+                        {/* <OngoingCertificates /> */}
                         <Certificates />
                         <Contact />
                     </div>

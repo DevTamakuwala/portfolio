@@ -238,9 +238,9 @@ export const ongoingCertificates = [
   //   platform: "Udemy",
   //   url: "https://www.udemy.com/course/spring-5-with-spring-boot-2/?couponCode=ACCAGE0923",
   // },
-  {
-    name: "Master Microservices with Spring Boot and Spring Cloud Specialization",
-    platform: "Coursera",
-    url: "https://www.coursera.org/specializations/packt-master-microservices-with-spring-boot-and-spring-cloud",
-  },
+  // {
+  //   name: "Master Microservices with Spring Boot and Spring Cloud Specialization",
+  //   platform: "Coursera",
+  //   url: "https://www.coursera.org/specializations/packt-master-microservices-with-spring-boot-and-spring-cloud",
+  // },
 ];
